@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://loredanau.github.io/parallax/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style>
+		
+		<title>Especial 1 - Parallax</title>
+		<link rel="stylesheet" type="text/css" href="./Especial 1 - Parallax_files/estilos.css">
+			<style type="text/css">
+				.container {
+					height: 200vh;
+					width: 800px;
+					margin: 0 auto;
+					text-align: center;
+				}
+				.iphone {
+					display: inline-block;
+					margin-top: 150px;
+					position: relative;
+					transition: .1s;
+				}
+				.shape {
+					background-image: url(shape.jpg);
+					width: 128px;
+					height: 128px;
+					position: absolute;
+					top: 75px;
+					right: 161px;
+					background-position: -54px;
+					-webkit-mask-image: url(apple-mask.png);
+					mask-image: url(apple-mask.png);
+				}
+			</style>
+	<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+	<body cz-shortcut-listen="true">
+	<section class="container">
+		<figure class="iphone" id="iphone" style="transform: rotate(-1.08deg);">
+		   <img src="./Especial 1 - Parallax_files/iphone.jpg" alt="">
+		   <div class="shape" id="mask" style="background-position: -54px center;"></div>
+		</figure>
+	</section>	
+		<script type="text/javascript">
+		    const $iphone = document.getElementById("iphone");
+		    const $mask = document.getElementById("mask");
+			window.addEventListener("scroll", function(e){
+				console.log(window.scrollY);
+				// $iphone.style.marginTop = window.scrollY + "px";
+				var position = 54 + window.scrollY;
+				$mask.style.backgroundPosition ="-" + position + "px";
+				$iphone.style.transform = "rotate(-"+ position*0.02 +"deg)";
+			});
+		</script>
+	
+	</body></html>
